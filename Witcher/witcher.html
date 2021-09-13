@@ -16,44 +16,69 @@
             padding: 0;
         }
 
-        body {
+        h1 {
+            margin: 0;
+            padding: 0;
             background-color: #000;
-            width: 100%;
-            height: 100%;
         }
+        .logo{
+            background-color: #000;
+            padding-left: 30px;
+            padding-top: 10px;
+        }
+        
 
-        /* 로고 */
-        .logo {
-            position: absolute;
-            top: 50px;
-            left: 50px;
-            z-index: 1;
+        /* 바디 */
+        body {
+            /* background: url(./imgs/bg1.jpg) black no-repeat fixed center/cover; */
         }
 
         /* 뱃지 */
-        .bdg {
+        .badge {
             position: fixed;
-            top: 50px;
-            right: 20px;
+            top: 30px;
+            right: 30px;
             z-index: 1;
         }
 
-        /* 전체섹션1 */
-        #sec1 {
-            position: relative;
-            width: 100%;
-            height: 1150px;
-            overflow: hidden;
-        }
-
-        /* 섹션1 */
-        #sec1 .sec1 {
-            padding: 50px 0;
-
-        }
-        #sec1 .netflix{
+        /* 네비게이션 */
+        #navi {
             position: absolute;
+            top: 200px;
+            z-index: 1;
+        }
 
+        ul,
+        li {
+            list-style-type: none;
+            font-size: 32px;
+            line-height: 70px;
+        }
+
+        #navi>ul>li a {
+            color: #fff;
+            position: relative;
+            text-decoration: none;
+        }
+
+        /* 메인 */
+        /* 섹션1 */
+        #sec1 {
+            
+            width: 100%;
+            height: 1000px;
+            background: url(./imgs/bg1.jpg) black no-repeat top/cover;
+        }
+        /* 윗쳐 로고 */
+        #sec1 .wlogo{
+            position: absolute;
+            top: 100px;
+            left: 30px;
+        }
+        #sec2{
+            width: 100%;
+            height: 1000px;
+            background: url(./imgs/bg2.jpg) black no-repeat top/cover;
         }
     </style>
 </head>
@@ -61,40 +86,45 @@
 <body>
     <!-- 상단 -->
     <!-- 로고 -->
-    <header id="header">
-        <h1 class="logo">
-            <a href="#header"><img src="./imgs/logo.png" alt="logo"></a>
-        </h1>
+    <header>
+        <div class="logo">
+            <h1>
+                <div class="logo">
+                    <img src="./imgs/netflix.png" style="width: 40px;" alt="netflogo">
+                </div>
+            </h1>
+        </div>
     </header>
+    
 
     <!-- 뱃지 -->
-    <div class="bdg">
-        <a href="#header"><img src="./imgs/badge.png" style="width: 100px;" alt="badge"></a>
+    <div class="badge">
+        <a href="#sec1"><img src="./imgs/badge.png" style="width: 100px;" alt="badge"></a>
     </div>
-
+    <!-- 네비게이션 -->
+    <nav id="navi">
+        <ul>
+            <li><a href="#sec2"> 소개영상</a></li>
+            <li><a href="#">등장인물 소개</a></li>
+        </ul>
+    </nav>
     <!-- 메인 -->
-    <!-- 섹션1 -->
-    <section id="sec1">
-        <div class="sec1">
-            <img src="./imgs/bg1.jpg" style="width: 100%; " alt="bg1">
-            <!-- Netflix icon -->
-            <div class="netflix">
-                <a href="https://www.netflix.com/kr/title/80189685?source=35"><img src="./imgs/netflix.png" alt="netflix"></a>
+    <main>
+        <!-- 섹션1 -->
+        <section id="sec1">
+            <!-- 위쳐 로고 -->
+            <div class="wlogo">
+                <img src="./imgs/logo.png" alt="wlogo">
             </div>
-        </div>
+        </section>
+        <!-- 섹션2 -->
+        <section id="sec2">
 
-    </section>
-
-    <!-- 섹션2 -->
-
-
-
-
-
-
-    </div>
-
+        </section>
+        
+    </main>
     <!-- 하단 -->
+
 </body>
 
 </html>
