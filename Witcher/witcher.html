@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
-<!-- 참고 페이지
-        https://www.ncpurple.com/intro/index
-
-    
-    -->
-
 <head>
     <meta charset="UTF-8">
     <title>The Witcher</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(".badge a").click(function(e){
+                e.preventDefault();
+                $("html,body").animate({scrollTop:"0"},800);
+            });//////////// click ///////////
+        }); //////////// jQB ////////////////
+    </script>
     <style>
         body,
         div {
@@ -21,12 +24,13 @@
             padding: 0;
             background-color: #000;
         }
-        .logo{
+        /* netflix 로고 */
+        .logo {
             background-color: #000;
-            padding-left: 30px;
+            padding-left:30px;
             padding-top: 10px;
         }
-        
+
 
         /* 바디 */
         body {
@@ -57,37 +61,56 @@
 
         #navi>ul>li a {
             color: #fff;
-            position: relative;
             text-decoration: none;
+            box-sizing: border-box;
+            
+        }
+
+        .menu{
+            position: relative;
+            left: -300px;
+            z-index: 1;
+            overflow: hidden;
+
+            transition: .8s;
+        }
+
+        #navi>ul>li:hover .menu{
+            left: -40px;
         }
 
         /* 메인 */
         /* 섹션1 */
         #sec1 {
-            
+
             width: 100%;
             height: 1000px;
             background: url(./imgs/bg1.jpg) black no-repeat top/cover;
+            
         }
+
         /* 윗쳐 로고 */
-        #sec1 .wlogo{
+        #sec1 .wlogo {
             position: absolute;
             top: 100px;
-            left: 30px;
+            left: 450px;
         }
-        #sec2{
+
+        #sec2 {
             position: relative;
             width: 100%;
             height: 1000px;
             background: url(./imgs/bg2.jpg) black no-repeat top/cover;
         }
-        #sec2 .vp{
+
+        #sec2 .vp {
             position: relative;
             text-align: center;
             top: calc(50% - 300px);
 
         }
     </style>
+
 </head>
 
 <body>
@@ -102,19 +125,27 @@
             </h1>
         </div>
     </header>
-    
+
 
     <!-- 뱃지 -->
     <div class="badge">
         <a href="#sec1"><img src="./imgs/badge.png" style="width: 100px;" alt="badge"></a>
     </div>
+
     <!-- 네비게이션 -->
     <nav id="navi">
         <ul>
-            <li><a href="#sec2"> 소개영상</a></li>
-            <li><a href="#">등장인물 소개</a></li>
+            <li>
+                <img src="./imgs/menu1-1.png" alt="menu" style="width: 125px;">
+                <ol class="menu">
+                    <li><a href="#sec2"> 소개영상</a></li>
+                    <li><a href="#">등장인물 소개</a></li>
+                </ol>
+            </li>
+
         </ul>
     </nav>
+
     <!-- 메인 -->
     <main>
         <!-- 섹션1 -->
@@ -127,12 +158,14 @@
         <!-- 섹션2 -->
         <section id="sec2">
             <div class="vp">
-                <iframe width="800" height="555" src="https://www.youtube.com/embed/ndl1W4ltcmg" title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="800" height="555" src="https://www.youtube.com/embed/ndl1W4ltcmg"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
 
         </section>
-        
+
     </main>
     <!-- 하단 -->
 
