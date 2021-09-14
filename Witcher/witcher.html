@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<!-- 참고 사이트
+    https://www.imdb.com/title/tt5180504/mediaindex?refine=nm0147147&page=4&ref_=ttmi_mi_sm
+    
+    https://www.netflix.com/kr/title/80189685
+
+
+-->
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +16,18 @@
             $(".badge a").click(function(e){
                 e.preventDefault();
                 $("html,body").animate({scrollTop:"0"},800);
+            });//////////// click ///////////
+        }); //////////// jQB ////////////////
+        $(function(){
+            $(".vpinfo a").click(function(e){
+                e.preventDefault();
+                $("html,bdoy").animate({scrollTop:"1068"},800);
+            });//////////// click ///////////
+        }); //////////// jQB ////////////////
+        $(function(){
+            $(".charinfo a").click(function(e){
+                e.preventDefault();
+                $("html,bdoy").animate({scrollTop:"2068"},800);
             });//////////// click ///////////
         }); //////////// jQB ////////////////
     </script>
@@ -79,6 +98,12 @@
             left: -40px;
         }
 
+        #navi:valid .menu{
+            height: 800px;
+            position: fixed;
+            
+        }
+
         /* 메인 */
         /* 섹션1 */
         #sec1 {
@@ -86,16 +111,16 @@
             width: 100%;
             height: 1000px;
             background: url(./imgs/bg1.jpg) black no-repeat top/cover;
-            
         }
 
         /* 윗쳐 로고 */
         #sec1 .wlogo {
             position: absolute;
-            top: 100px;
-            left: 450px;
+            top: 80px;
+            left: 0px;
         }
 
+        /* 섹션2 */
         #sec2 {
             position: relative;
             width: 100%;
@@ -108,6 +133,14 @@
             text-align: center;
             top: calc(50% - 300px);
 
+        }
+
+        /* 섹션3 */
+        #sec3{
+            position: relative;
+            width: 100%;
+            height: 1000px;
+            background: url(./imgs/bg3.jpg) black no-repeat top/cover;
         }
     </style>
 
@@ -138,8 +171,8 @@
             <li>
                 <img src="./imgs/menu1-1.png" alt="menu" style="width: 125px;">
                 <ol class="menu">
-                    <li><a href="#sec2"> 소개영상</a></li>
-                    <li><a href="#">등장인물 소개</a></li>
+                    <li class="vpinfo"><a href="#sec2"> 소개영상</a></li>
+                    <li class="charinfo"><a href="#sec3">등장인물 소개</a></li>
                 </ol>
             </li>
 
@@ -152,7 +185,7 @@
         <section id="sec1">
             <!-- 위쳐 로고 -->
             <div class="wlogo">
-                <img src="./imgs/logo.png" alt="wlogo">
+                <img src="./imgs/wlogo.png" style="width: 380px;" alt="wlogo">
             </div>
         </section>
         <!-- 섹션2 -->
@@ -163,9 +196,13 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </div>
-
         </section>
+        <!-- 섹션3 -->
+        <section id="sec3">
+            <div class="char">
 
+            </div>
+        </section>
     </main>
     <!-- 하단 -->
 
