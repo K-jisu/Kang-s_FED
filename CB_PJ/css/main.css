@@ -6,3 +6,56 @@
 .ibx{
     
 }
+
+/* body{
+    background: url(../img/bg1.jpg);
+    background-repeat: no-repeat;
+    background-position: top/cover;
+} */
+
+/* 상단 */
+#top{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    outline: 1px dashed red;
+}
+#top::before{
+    position: relative;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100px;
+    background: #000;
+    opacity: .7;
+}
+#gnb{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+
+#gnb li{
+    float: left;
+    font-size: 25px;
+    margin: 10px 20px;
+}
+
+/* 메인 */
+/* 섹션1 */
+#sec1{
+    background: url(../img/bg1.jpg) no-repeat top/cover;
+
+}
+/* 섹션2 */
+#sec2{
+
+}
+/* 섹션3 */
+#sec3{
+
+}
+
+
+
+/* 하단 */
