@@ -4,12 +4,13 @@
 html,body,ol,ul,h1,h2,h3,h4,p{
     margin: 0;
     padding: 0;
+    font-family: 'Special Elite', cursive;
 }
 ol,ul{
     list-style: none;
 }
 a{
-    color: #000;
+    color: #fff;
     text-decoration: none;
 }
 img{

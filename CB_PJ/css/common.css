@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+/* font-family: 'Special Elite', cursive; */
+
 /* 로고 */
 .logo{
     position: absolute;
@@ -16,5 +20,9 @@
 .comsec{
     width: 100%;
     height: 1000px;
-    background: #000;
+    background-color: #000000b8;
+}
+
+.bgi{
+    
 }

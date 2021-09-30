@@ -7,6 +7,10 @@
     object-fit: cover;
 }
 
+/* #lo1{
+    background: url(../img/logo.png);
+} */
+
 body::after{
     content: '';
     display: block;

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conqueror's Blade _ index</title>
     <link rel="stylesheet" href="./css/main.css">
+    <script>
+        function gogo(yo){
+            document.querySelector("#ifm").src="https://www.youtube.com/embed/"+yo+"?autoplay=1&loop=1&playlist="+yo;
+
+        }
+    </script>
 </head>
 <body>
     <!-- 상단 -->
@@ -27,14 +33,50 @@
     <main id="main_cont" class="ibx">
     <!-- 섹션1 -->
     <section id="sec1" class="comsec">
+        
 
     </section>
     <!-- 섹션2 -->
-    <section id="sec2" class="comsec">
+    <section id="sec2" class="comsec bgi">
+        <div class="wptitle">
+            <p>WEAPON</p>
+        </div>
+
+        <div class="wpnav">
+            <ul>
+                <li id="Musket">
+                    <img src="./img/musket.png" alt="화승총 기본">
+                    <img src="./img/musket-active.png" onclick="gogo('R7NGjBhkBS4'); return false;" alt="화승총 액티브">
+                </li>
+                <li>
+                    <img src="./img/arco.png" alt="활 기본">
+                    <img src="./img/arco-active.png" onclick="gogo('k6T9Gzg94MQ'); return false;" alt="활 액티브">
+                </li>
+                <li>
+                    <img src="./img/longSwordShield.png" alt="롱소드 기본">
+                    <img src="./img/longSwordShield-active.png" onclick="gogo('ryTepcjVafk'); return false;" alt="롱소드 액티브">
+                </li>
+                <li>
+                    <img src="./img/poleaxe.png" alt="긴도끼 기본">
+                    <img src="./img/poleaxe-active.png" onclick="gogo('k0AEyZeifOk'); return false;" alt="긴도끼 액티브">
+                </li>
+                <li>
+                    <img src="./img/spear.png" alt="창 기본">
+                    <img src="./img/spear-active.png" onclick="gogo('fOU1WU9NCHc'); return false;" alt="창 액티브">
+                </li>
+            </ul>
+        </div>
+
+        <div id="screen">
+            <iframe id="ifm" width="100%" height="100%" src="https://www.youtube.com/embed/rStuRYaKgWY?autoplay=1&loop=1&playlist=rStuRYaKgWY" title="YouTube video player" allow="autoplay" style="border: none;"></iframe>
+
+        </div>
+
+        
 
     </section>
     <!-- 섹션3 -->
-    <section id="sec3" class="comsec">
+    <section id="sec3" class="comsec bgi">
 
     </section>
     </main>
