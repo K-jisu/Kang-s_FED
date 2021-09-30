@@ -3,22 +3,18 @@
 @import url(./reset.css);
 @import url(./common.css);
 
-.ibx{
-    
-}
-
 /* body{
     background: url(../img/bg1.jpg);
     background-repeat: no-repeat;
     background-position: top/cover;
 } */
 
-/* 상단 */
+/*************************** 상단 ***************************/
 #top{
     position: fixed;
     width: 100%;
     height: 100px;
-    outline: 1px dashed red;
+    /* outline: 1px dashed red; */
     background-color: rgba(56, 56, 56, 0.849);
     z-index: 1;
 }
@@ -36,12 +32,12 @@
 #top .logo{
     background-image: url(../img/nav_logo.png);
 }
+/* NAVIGATION */
 #gnb{
     position: absolute;
     bottom: 15px;
     left: calc(50% - 132px);
 }
-
 
 #gnb li{
     height: 62px;
@@ -66,48 +62,47 @@
     
 }
 
-/* 메인 */
-/* 섹션1 */
+/*************************** 메인 ***************************/
+/*************************** 섹션1 ***************************/
 #sec1 {
     background: url(../img/bg1.jpg) no-repeat top/cover;
     
 
 }
-/* 섹션2 */
+/*************************** 섹션2 ***************************/
 #sec2{
-
+    background: url(../img/sc2bg.jpg) no-repeat top/cover;
 }
-
+/* WEAPON TITLE */
 .wptitle{
     position: relative;
     width: 100%;
     height: 15%;
-    outline: 1px dashed red;
+    /* outline: 1px dashed red; */
     text-align: center;
     padding: auto;
 }
+/* WEAPON P */
 .wptitle p{
     font-size: 70px;
     font-weight: bold;
     color: #fff;
     line-height: 170px;
 }
-
+/* WEAPON NAVIGATION */
 .wpnav{
     position: relative;
     width: 100%;
     height: 7%;
-    outline: 1px dashed blue;
+    /* outline: 1px dashed blue; */
 }
-
+/*  */
 .wpnav ul{
     display: flex;
     margin: 0 50px;
     height: 100%;
     text-align: center;
     align-items: center;
-    
-    
 }
 
 .wpnav li{
@@ -117,28 +112,30 @@
 .wpnav img {
     max-height: 60%;
 }
-
+/* li 이미지 기본값 */
 .wpnav li img:nth-child(2){
     display: none;;
 }
-
+/* li 오버시 이미지2번 등장 */
 .wpnav li:hover img:nth-child(2){
     display: inline;
 }
-
+/* li 오버시 기본이미지 숨김 */
 .wpnav li:hover img:nth-child(1){
     display: none;
 }
 
+.wpnav li:hover div{
+    opacity: 1;
+}
 
+/* 영상프레임 */
 #screen{
     position: relative;
     top: 70px;
     margin: 0 auto;
     width: 790px;
     height: 495px;
-    outline: 1px dashed purple;
-
 }
 
 /* 섹션3 */
@@ -148,4 +145,29 @@
 
 
 
-/* 하단 */
+/*************************** 하단 ***************************/
+#info{
+    
+    width: 100%;
+    height: 200px;
+    background-color: #000;
+}
+
+.info_box{
+    display: flex;
+    height: 100%;
+    width: 700px;
+    margin: 0 auto;
+    outline: 1px dashed pink;
+}
+
+.fb1{
+    background: url(../img/nav_logo.png) no-repeat center;
+}
+
+.fb2{
+    background: url(../img/footer-booming.png) no-repeat center;
+}
+.fb3{
+    margin-left: auto ;
+}
