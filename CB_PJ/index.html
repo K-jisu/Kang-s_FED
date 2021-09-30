@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="./css/main.css">
     <script>
         function gogo(yo){
-            document.querySelector("#ifm").src="https://www.youtube.com/embed/"+yo+"?autoplay=1&loop=1&playlist="+yo;
+            document.querySelector("#ifm2").src="https://www.youtube.com/embed/"+yo+"?autoplay=1&loop=1&playlist="+yo;
+
+        }
+        
+        function yoyo(go){
+            document.querySelector("#ifm1").src="https://www.youtube.com/embed/"+go+"?autoplay=1&loop=1&playlist="+go;
 
         }
     </script>
@@ -22,8 +27,8 @@
         <!-- 메뉴 -->
         <nav id="gnb">
             <ul>
+                <li><a href="#" title="season">Season</a></li>
                 <li><a href="#sec2" title="weapon">Weapon</a></li>
-                <li><a href="#sec3" title="season">Season</a></li>
             </ul>
         </nav>
 
@@ -31,12 +36,35 @@
 
     <!-- 메인 -->
     <main id="main_cont" class="ibx">
-    <!-- 섹션1 -->
+    <!------------------------- 섹션1 ------------------------->
     <section id="sec1" class="comsec">
+        <div class="sstitle">
+            <p>SEASON</p>
+        </div>
+
+        <div class="ssnav">
+            <div class="ssnav_box">
+                <ul>
+                    <li onclick="yoyo('9igGhwObnOs')">
+                        <span onclick="yoyo()">SEASON5</span>
+                    </li>
+                    <li onclick="yoyo('7IZUd3I_LVI')">
+                        <span onclick="yoyo()">SEASON6</span>
+                    </li>
+                    <li onclick="yoyo('7fphPbV9zDM')">
+                        <span>SEASON7</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="screen1">
+            <iframe id="ifm1" class="ifm" src="https://www.youtube.com/embed/7fphPbV9zDM?autoplay=1&loop=1&playlist=7fphPbV9zDM" title="YouTube video player" allow="autoplay"></iframe>
+        </div>
         
 
     </section>
-    <!-- 섹션2 -->
+    <!--------------------------- 섹션2 --------------------------->
     <section id="sec2" class="comsec bgi">
         <div class="wptitle">
             <p>WEAPON</p>
@@ -82,25 +110,29 @@
             </ul>
         </div>
 
-        <div id="screen">
-            <iframe id="ifm" width="100%" height="100%" src="https://www.youtube.com/embed/rStuRYaKgWY?autoplay=1&loop=1&playlist=rStuRYaKgWY" title="YouTube video player" allow="autoplay" style="border: none;"></iframe>
+        <div id="screen2">
+            <iframe id="ifm2" class="ifm" src="https://www.youtube.com/embed/rStuRYaKgWY?loop=1&playlist=rStuRYaKgWY" title="YouTube video player"></iframe>
         </div>
 
         
 
     </section>
-    <!-- 섹션3 -->
-    <section id="sec3" class="comsec bgi">
-
-    </section>
+    
     </main>
-    <!-- 하단 -->
+    <!--------------------------- 하단 --------------------------->
     
     <footer id="info" class="ibx">
         <div class="info_box">
             <div class="fbx fb1"></div>
             <div class="fbx fb2"></div>
-            <div class="fbx fb3"></div>
+            <div class="fbx fb3">
+                <ul>
+                    <li>Booming Tech | User Agreement | Privacy Policy</li>
+                    <li>Customer Service: cb_support@boomingtech.com</li>
+                    <li>Business: bd@boomingtech.com</li>
+                    <li>©2021 Booming Tech. All Rights Reserved.</li>
+                </ul>
+            </div>
         </div>
         
 

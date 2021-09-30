@@ -38,6 +38,6 @@ html{
 .fbx{
     width: 200px;
     height: 100%;
-    outline: 1px dashed #fff;
+    /* outline: 1px dashed #fff; */
     
 }
