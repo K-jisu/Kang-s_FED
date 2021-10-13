@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+@import url(./core.css);
+@import url(./reset.css);
+
+#top{
+    max-width: 14800px;
+    height: 98.42px;
+}
