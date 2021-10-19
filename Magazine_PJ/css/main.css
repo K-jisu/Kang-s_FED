@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/* 상단영역 */
+.top {
+    height: 200px;
+    width: 100%;
+    background: url(../img/lbg.jpg) center no-repeat;
+    text-align: center;
+    line-height: 155px;
+}
+
+#header {
+    position: relative;
+    height: 69px;
+    width: 100%;
+}
+
+.logo2 {
+    width: 83px;
+    height: 30px;
+    background: url(../img/logo2.png)no-repeat;
+    position: absolute;
+    left: 106px;
+    top: 12px;
+    cursor: pointer;
+}
+/* GNB */
+.nav {
+    max-width: 1120px;
+    padding: 0 230px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.nav ul {
+    height: 100%;
+    line-height: 69px;
+    align-items: center;
+}
+
+.nav ul li {
+    float: left;
+    margin-right: 40px;
+    font-size: 16px;
+    color: #000;
+    font-weight: 600;
+    letter-spacing: .03em;
+}
+
+.nav ul li:last-child img {
+    height: 21px;
+    margin-bottom: 22px;
+    margin-left: -2px;
+}
