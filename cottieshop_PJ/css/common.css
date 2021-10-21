@@ -10,7 +10,8 @@
 }
 /* logo */
 .logo{
-    position: relative;
+    position: absolute;
+    
 
 }
 /* GNB */
