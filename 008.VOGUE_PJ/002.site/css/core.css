@@ -113,6 +113,10 @@
     border: 20px solid #f00;
 }
 
+.cbx:hover.bgi{
+    transform: scale(1.01);
+}
+
 /* 컨텐츠 타이틀 박스 */
 .cbx h2 {
     position: absolute;
@@ -164,4 +168,5 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    transition: transform .2s ease-in;
 }
