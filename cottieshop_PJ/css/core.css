@@ -5,7 +5,7 @@
 font-family: 'Noto Sans KR', sans-serif; */
 
 body{
-    outline: 2px dotted rgb(124, 42, 42);
-    cursor: url(../images/cursor-pointer.png) auto;
     font-family: 'Noto Sans KR','Libre Baskerville', sans-serif;
+    background-color: #F0EDE6;
+    cursor: url(../images/cursor-pointer-1.png), auto;
 }
