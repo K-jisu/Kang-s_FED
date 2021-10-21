@@ -7,10 +7,9 @@ interface TodoListItemProps{
     };
 }
 
-export const TodoListItem: React.FC<TodoListItemProps> = props => {
+export const TodoListItem: React.FC<TodoListItemProps> = ({todo}) => {
     return (
         <li>Content</li>
         
     );
 };
-
