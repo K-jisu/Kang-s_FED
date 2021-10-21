@@ -292,7 +292,7 @@
     /* 양쪽패딩으로 끝에 닿기전에 줄바꿈되게함! */
 }
 #top.on .gnb ul{
-    max-width: 631px;
+    max-width: 660px;
 }
 #top.on .gnb li{
     margin: 0 18px;
