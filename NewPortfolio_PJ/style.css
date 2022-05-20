@@ -142,11 +142,12 @@ header {
   position: absolute;
   top: 50%;
   left: 300px;
+  white-space: nowrap;
   transform: translateY(-50%);
 }
 .home-heading span {
   display: block;
-  font-size: 115px;
+  font-size: 100px;
   color: #fff;
   font-weight: 600;
   width: 0;
@@ -214,21 +215,43 @@ header {
 
 /* ################# Section : about  ################# */
 .about-inner {
-  background: #0dace3 url(images/line-drawing.png) no-repeat right bottom;
+  background: rgb(48, 163, 163);
   height: 100%;
   /*background-color: #0dace3;*/
+  position: relative;
+}
+.about-me{
+position: absolute;
+top: 9vh;
+left: 16vh;
+}
+.about-me h3 {
+  margin: 0;
+  font-size: 45px;
+}
+.profile {
+  background-image: url(./images/profile.jpg);
+  width: 14vh;
+  height: 18vh;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(1.7);
+  margin-left: 200px;
+  border-radius: 10%;
 }
 .about-items {
+  border: 1px solid rgb(0, 0, 0);
   width: 50%;
   color: #fff;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  margin-left: 100px;
+  margin-left: 600px;
 }
 .item {
   overflow: hidden;
   margin-bottom: 30px;
+
 }
 .item:hover h3 {
   color: #000;
@@ -284,6 +307,13 @@ header {
   width: 75%;
   overflow: hidden;
 }
+.vogue {
+  margin-top: 100px;
+}
+.minions, .witcher {
+  margin-top: 50px;
+}
+
 input[name=tabmenu] {
   display: none;
 }
