@@ -387,10 +387,21 @@ input[id=tab3]:checked ~ .tabs {
   margin-bottom: 50px;
 }
 .detail div {
+  position: relative;
   display: inline-block;
   text-align: center;
   width: 32.5%;
+  height: 8em;
   color: #999;
+  overflow: hidden;
+}
+.detail img{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
 }
 .detail div span {
   font-size: 36px;
