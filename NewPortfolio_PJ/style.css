@@ -226,10 +226,10 @@ top: 9vh;
 left: 16vh;
 }
 .about-me h3 {
+  display: inline-block;
   margin: 0;
   font-size: 45px;
-  color: #fff
-  ;
+  color: #fff;
 }
 .profile {
   background-image: url(./images/profile.jpg);
@@ -242,8 +242,7 @@ left: 16vh;
   border-radius: 10%;
 }
 .about-items {
-  border: 1px solid rgb(0, 0, 0);
-  width: 50%;
+  width: 55%;
   color: #fff;
   position: absolute;
   top: 50%;
@@ -253,32 +252,25 @@ left: 16vh;
 .item {
   overflow: hidden;
   margin-bottom: 30px;
-
 }
 .item:hover h3 {
   color: #000;
 }
-.item:hover img {
-  filter: invert(0);
-}
-.item img {
-  height: 120px;
+.item i {
   float: left;
   margin-right: 20px;
-  filter: invert(1);
-  transition: 0.5s;
+  filter: invert(0);
 }
 .item h3 {
   font-size: 28px;
   font-weight: 500;
   margin: 0;
   transition: 0.5s;
-  letter-spacing: -1px;
 }
 .item span {}
 .item p {
   overflow: hidden;
-  font-size: 18px;
+  font-size: 19px;
 }
 
 /* ############## Section : project  ##############*/
@@ -378,6 +370,7 @@ input[id=tab3]:checked ~ .tabs {
   position: relative;
 }
 .project-info p {
+  height: 200px;
   font-size: 16px;
   line-height: 1.5em;
 }
