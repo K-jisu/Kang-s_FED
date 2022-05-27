@@ -132,7 +132,7 @@ header {
   color: crimson;
 }
 .opacity-image {
-  background: url(images/section-bg-01.jpg) no-repeat center center;
+  background: url(images/main_bg.jpg) no-repeat center center;
   background-size: cover;
   height: 100%;
   opacity: 0;
@@ -242,7 +242,7 @@ left: 16vh;
   border-radius: 10%;
 }
 .about-items {
-  width: 55%;
+  width: 45%;
   color: #fff;
   position: absolute;
   top: 50%;
@@ -253,24 +253,27 @@ left: 16vh;
   overflow: hidden;
   margin-bottom: 30px;
 }
-.item:hover h3 {
+.item:hover .quote {
   color: #000;
 }
 .item i {
   float: left;
   margin-right: 20px;
   filter: invert(0);
-}
-.item h3 {
-  font-size: 28px;
-  font-weight: 500;
-  margin: 0;
   transition: 0.5s;
 }
-.item span {}
+.item h3 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
+}
 .item p {
   overflow: hidden;
   font-size: 19px;
+}
+.item .level{
+  transform: rotate(90deg);
+  margin: 0 10px;
 }
 
 /* ############## Section : project  ##############*/
@@ -370,13 +373,16 @@ input[id=tab3]:checked ~ .tabs {
   position: relative;
 }
 .project-info p {
-  height: 200px;
-  font-size: 16px;
+  height: 100px;
+  font-size: 18px;
   line-height: 1.5em;
+  margin-top: 50px;
+  word-break: keep-all;
 }
-.project-info ul {
-  line-height: 2em;
-  margin: 30px 0;
+.project-info span {
+ font-style: italic;
+ font-weight: bold;
+ font-size: 1.4em;
 }
 .project-info ul li:before {
   content:"\f105";
@@ -384,7 +390,8 @@ input[id=tab3]:checked ~ .tabs {
   margin-right: 10px;
 }
 .detail {
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
+  margin: 10px 0px 50px 0px;
 }
 .detail div {
   position: relative;
@@ -440,53 +447,58 @@ object-fit: cover;
 }
 
 
-/* ################# Section : plan  ##################*/
-.plan-inner {
+/* ################# Section : skill  ##################*/
+.skill-inner {
   background-color: #1d1b24;
   height: 100%;
 }
-.plan-feature {
+.skill-feature {
   width: 80%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.plan-feature > div {
+.skill-feature > div {
   height: 300px;
   color: #bbb;
 }
-.plan-info {}
-.plan-info > div {
+.skill-info {}
+.skill-info > div {
   float: left;
 }
-.plan-heading {
+.skill-heading {
   width: 70%;
   padding-right: 50px;
 }
-.plan-heading h2,
+.skill-heading h2,
 .history-info h2{
   color: #fff;
   margin: 0;
 }
-.plan-heading p {
-  font-size: 16px;
+.skill-heading p {
+  font-size: 18px;
   line-height: 1.6em;
 }
-.plan-photo {
+.skill-photo {
   width: 30%;
 }
-.plan-photo img {
+.skill-photo img {
   height: 265px;
 }
-.plan-heading hr.bar,
+.skill-heading hr.bar,
 .history-info hr.bar
 {
+  width: 5em;
+  height: 2px;
+  color: dodgerblue;
   background-color: dodgerblue;
   display: inline-block;
 }
 .history-slider div {
   outline: none; /* Slick 슬라어더 드래글 할 때 나오는 아웃라인 없애기 */
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 .history-slider img {
   display: block;
@@ -503,10 +515,6 @@ object-fit: cover;
   text-align: center;
 }
 
-.history-slider div p {
-  font-size: 16px;
-  line-height: 1.5em;
-}
 /* Slick.js Custom CSS */
 .history-slider .slick-arrow {
   display: none !important;
@@ -543,7 +551,7 @@ object-fit: cover;
   font-weight: normal;
   margin: 0;
 }
-.send-box {}
+/* .send-box {}
 .send-box label {
   display: block;
   font-weight: bold;
@@ -590,9 +598,9 @@ object-fit: cover;
 }
 .send-box button:hover {
   background-color: #000;
-}
+} */
 
-.contact-info {}
+/* .contact-info {}
 .contact-info h4 {
   font-weight: normal;
   font-size: 20px;
@@ -607,7 +615,7 @@ object-fit: cover;
 }
 .contact-info p {
   line-height: 1.5em;
-}
+} */
 
 /* ############ SubPage : Hiring ############ */
 .modal {
