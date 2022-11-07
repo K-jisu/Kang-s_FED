@@ -53,7 +53,15 @@ function calendarInit(){
 
     }
 
-    $
+    $(`.prev`).on(`click`, function(){
+        thisMonth = new Date(currentYear, currentMonth - 1, 1);
+        renderCalender(thisMonth);
+    });
+
+    $(`.Next`).on(`click`, function(){
+        thisMonth = new Date(currentYear, currentMonth + 1, 1);
+        renderCalender(thisMonth);
+    });
 
 
 
