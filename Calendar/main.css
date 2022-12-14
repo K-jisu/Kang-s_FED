@@ -29,11 +29,11 @@
     cursor: pointer;
 }
 
-.PrevDay{
+.Prev{
     transform: rotate(-135deg);
 }
 
-.NextDay{
+.Next{
     transform: rotate(45deg);
 }
 
