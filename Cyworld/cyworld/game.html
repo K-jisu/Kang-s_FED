@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>game</title>
-    <link rel="stylesheet" href="styles/game.css">
     <script src="./styles/game.js"></script>
+    <link rel="stylesheet" href="styles/game.css">
 </head>
 <body>
     <div class="wrapper">
@@ -23,7 +23,7 @@
             <div class="game_subtitle">제시어 : <span id="word">코드캠프</span></div>
             <div class="word_text">
                 <input type="text" class="textbox" id="myword" placeholder="단어를 입력하세요">
-                <button class="search">입력</button>
+                <button class="search" onclick="startWord()">입력</button>
             </div>
             <div id="result" class="word_result">결과!</div>
         </div>
