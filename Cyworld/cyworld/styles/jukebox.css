@@ -44,6 +44,7 @@ html, body{
 .divideLine{
         width: 100%;
         border-top: 1px solid gray;
+        margin: 10px 0px;
  }
 
  .albumWrapper{
@@ -81,5 +82,50 @@ html, body{
 }
 
 .wrapper__body{
+    width: 100%;
+}
 
+.albumTable{
+    width: 100%;
+    padding-top: 8px;
+    border-spacing: 0px;
+}
+
+.albumTable th{
+    height: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: gray;
+    background-color: #eee;
+    padding-top: 5px;
+    border-top: 1px solid gray;
+    border-bottom: 1px dashed gray;
+}
+
+.albumTable td{
+    height: 20px;
+    font-size: 10px;
+    color: #0f4652;
+    border-bottom: 1px dashed gray;
+
+}
+
+.album-table-checkbox{
+    width: 5%;
+    text-align: center;
+}
+
+.album-table-number{
+    width: 10%;
+    text-align: center;
+}
+
+.album-table-song{
+    width: 45%;
+    text-align: left;
+}
+
+.album-table-artist{
+    width: 30%;
+    text-align: center;
 }

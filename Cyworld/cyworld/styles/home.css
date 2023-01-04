@@ -30,11 +30,13 @@ html, body{
     flex-direction: row;
     align-items: center;
 }
+
 .title{
 color: #55B2E4;
 font-size: 13px;
 font-weight: 700;
 }
+
 .subtitle{
     font-size: 8px;
     padding-left: 5px;
