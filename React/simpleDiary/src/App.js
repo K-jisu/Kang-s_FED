@@ -85,7 +85,7 @@ function App() {
       )
     );
   };
-
+  /** useMemo  */
   const getDiaryAnalysis = useMemo(() => {
     // useMemo 를 쓰면 getDiaryAnalysis에 값을 넣어줌
     // 그래서 getDiaryAnalysis는 함수가 아니라 값으로 쓰임
