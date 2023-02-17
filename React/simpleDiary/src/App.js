@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import "./App.css";
 import DiaryEditor from "./DiaryEditor";
 import DiaryList from "./DiaryList";
+// import OptimizeTest from "./OptimizeTest";
 // import LifeCycle from "./LifeCycle";
 
 // https://jsonplaceholder.typicode.com/comments
@@ -73,7 +74,6 @@ function App() {
   };
 
   const onRemove = (targetId) => {
-    console.log(`${targetId}가 삭제되었습니다`);
     const newDiaryList = data.filter((it) => it.id !== targetId);
     setData(newDiaryList);
   };
@@ -89,7 +89,6 @@ function App() {
   const getDiaryAnalysis = useMemo(() => {
     // useMemo 를 쓰면 getDiaryAnalysis에 값을 넣어줌
     // 그래서 getDiaryAnalysis는 함수가 아니라 값으로 쓰임
-    console.log("일기 분석 시작");
 
     const goodCount = data.filter((it) => it.emotion >= 3).length;
     const badCount = data.length - goodCount;
@@ -102,6 +101,7 @@ function App() {
 
   return (
     <div className="App">
+      {/* <OptimizeTest/> */}
       {/* <LifeCycle/> */}
       <DiaryEditor onCreate={onCreate} />
       <div>전체 일기 : {data.length} </div>
