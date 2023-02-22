@@ -1,40 +1,41 @@
-import React, { useCallback, useEffect, useMemo } from "react";
-import { useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useReducer } from "react";
+import { useRef } from "react";
 import "./App.css";
 import DiaryEditor from "./DiaryEditor";
 import DiaryList from "./DiaryList";
-// import OptimizeTest from "./OptimizeTest";
-// import LifeCycle from "./LifeCycle";
 
-// https://jsonplaceholder.typicode.com/comments
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "INIT": {
+      return action.data;
+    }
+    case "CREATE": {
+      const created_date = new Date().getTime();
+      const newItem = {
+        ...action.data,
+        created_date,
+      };
+      return [newItem, ...state];
+    }
+    case "REMOVE": {
+      return state.filter((it) => it.id !== action.targetId);
+    }
+    case "EDIT": {
+      return state.map((it) =>
+        it.id === action.targetId ? { ...it, content: action.newContent } : it
+      );
+    }
+    default:
+      return state;
+  }
+};
 
-// const dummyList = [
-//   {
-//     id :1,
-//     author : "강지수",
-//     content : "하이1",
-//     emotion : 5,
-//     create_date : new Date().getTime()
-//   },
-//   {
-//     id :2,
-//     author : "홍길동",
-//     content : "하이2",
-//     emotion : 4,
-//     create_date : new Date().getTime()
-//   },
-//   {
-//     id :3,
-//     author : "아무게",
-//     content : "하이3",
-//     emotion : 3,
-//     create_date : new Date().getTime()
-//   },
+export const DiarySateContext = React.createContext();
 
-// ]
+export const DiaryDispatchContext = React.createContext();
 
 function App() {
-  const [data, setData] = useState([]);
+  const [data, dispatch] = useReducer(reducer, []);
 
   const datatId = useRef(0);
 
@@ -52,7 +53,7 @@ function App() {
         id: datatId.current++,
       };
     });
-    setData(initData);
+    dispatch({ type: "INIT", data: initData });
   };
 
   useEffect(() => {
@@ -60,29 +61,24 @@ function App() {
   }, []);
 
   const onCreate = useCallback((author, content, emotion) => {
-    const created_date = new Date().getTime();
-    const newItem = {
-      author,
-      content,
-      emotion,
-      created_date,
-      id: datatId.current,
-    };
+    dispatch({
+      type: "CREATE",
+      data: { author, content, emotion, id: datatId.current },
+    });
 
     datatId.current += 1;
-    setData((data) => [newItem, ...data]);
   }, []);
 
   const onRemove = useCallback((targetId) => {
-    setData((data) => data.filter((it) => it.id !== targetId));
+    dispatch({ type: "REMOVE", targetId });
   }, []);
 
   const onEdit = useCallback((targetId, newContent) => {
-    setData((data) =>
-      data.map((it) =>
-        it.id === targetId ? { ...it, content: newContent } : it
-      )
-    );
+    dispatch({ type: "EDIT", targetId, newContent });
+  }, []);
+
+  const memoizedDispatches = useMemo(() => {
+    return { onCreate, onRemove, onEdit };
   }, []);
   /** useMemo  */
   const getDiaryAnalysis = useMemo(() => {
@@ -99,16 +95,20 @@ function App() {
   // getDiaryAnalysis 를 함수호출이 아니라 그냥 값으로 씀
 
   return (
-    <div className="App">
-      {/* <OptimizeTest/> */}
-      {/* <LifeCycle/> */}
-      <DiaryEditor onCreate={onCreate} />
-      <div>전체 일기 : {data.length} </div>
-      <div>기분 좋은 일기 개수 : {goodCount} </div>
-      <div>기분 나쁜 일기 개수 : {badCount} </div>
-      <div>기분 좋은 일기 비율 : {goodRatio} </div>
-      <DiaryList onEdit={onEdit} onRemove={onRemove} diaryList={data} />
-    </div>
+    <DiarySateContext.Provider value={data}>
+      <DiaryDispatchContext.Provider value={memoizedDispatches}>
+        <div className="App">
+          {/* <OptimizeTest/> */}
+          {/* <LifeCycle/> */}
+          <DiaryEditor />
+          <div>전체 일기 : {data.length} </div>
+          <div>기분 좋은 일기 개수 : {goodCount} </div>
+          <div>기분 나쁜 일기 개수 : {badCount} </div>
+          <div>기분 좋은 일기 비율 : {goodRatio} </div>
+          <DiaryList />
+        </div>
+      </DiaryDispatchContext.Provider>
+    </DiarySateContext.Provider>
   );
 }
 
