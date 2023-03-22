@@ -1,4 +1,4 @@
-import { Component, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DiaryStateContext } from "../App";
 
 import MyHeader from "../components/MyHeader";
@@ -13,7 +13,7 @@ const Home = () => {
   const headText = `${curDate.getFullYear()}년 ${curDate.getMonth() + 1}월`;
 
   useEffect(() => {
-    if (diaryList.legth >= 1) {
+    if (diaryList.length >= 1) {
       const firstDay = new Date(
         curDate.getFullYear(),
         curDate.getMonth(),
