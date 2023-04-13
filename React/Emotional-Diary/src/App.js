@@ -22,10 +22,12 @@ const reducer = (state, action) => {
     }
     /**선택한 아이디 빼고 반환한다. -> 선택한 아이디를 제거했다. */
     case "REMOVE": {
+      /**it은 state에 있는 기존 data */
       newState = state.filter((it) => it.id !== action.targetId);
       break;
     }
     case "EDIT": {
+      /**기존 id와 수정할 id가 같으면 수정한 값을 반환 아니면 그대로 */
       newState = state.map((it) =>
         it.id === action.data.id ? { ...action.data } : it
       );
@@ -40,8 +42,43 @@ const reducer = (state, action) => {
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
+const dummyData = [
+  {
+    id: 1,
+    emotion: 1,
+    content: "오늘의 일기 1번",
+    date: 1681404600401,
+  },
+  {
+    id: 2,
+    emotion: 2,
+    content: "오늘의 일기 2번",
+    date: 1681404600402,
+  },
+  {
+    id: 3,
+    emotion: 3,
+    content: "오늘의 일기 3번",
+    date: 1681404600403,
+  },
+  {
+    id: 4,
+    emotion: 4,
+    content: "오늘의 일기 4번",
+    date: 1681404600404,
+  },
+  {
+    id: 5,
+    emotion: 5,
+    content: "오늘의 일기 5번",
+    date: 1681404600405,
+  },
+];
+
+
 function App() {
-  const [data, dispatch] = useReducer(reducer, []);
+  /**useReducer 상태관리 */
+  const [data, dispatch] = useReducer(reducer, dummyData);
 
   const dataid = useRef(0);
 

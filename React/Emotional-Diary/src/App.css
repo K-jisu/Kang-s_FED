@@ -88,7 +88,7 @@ header .head_text {
   width: 25%;
   justify-content: start;
 }
-.head_right {
+.head_btn_right {
   width: 25%;
   justify-content: end;
 }
