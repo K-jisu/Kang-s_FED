@@ -69,8 +69,6 @@ const DiaryList = ({ diaryList }) => {
     };
     // diaryList를 문자열로 변환(stringify) -> 배열로 변환(parse)
     const copyList = JSON.parse(JSON.stringify(diaryList));
-    // compare 함수에서 비교된 값들을 sort()로 정렬함.
-    const sortedList = copyList.sort(compare);
 
     /**감정 구분함수 */
     const filterCallBack = (item) => {
@@ -80,13 +78,14 @@ const DiaryList = ({ diaryList }) => {
         return item.emotion > 3;
       }
     };
-
     /**필터 된 리스트 */
     const filteredList =
       //all 이면 기존 copyList 보여주고 아니면 filterCallBack함수에서 리턴된 값 보여주기
       filter === "all" ? copyList : copyList.filter((it) => filterCallBack(it));
 
-    return sortedList, filteredList;
+    // filteredList에서 필터된 값들을 compare 함수에서 비교된 값들을 sort()로 정렬함.
+    const sortedList = filteredList.sort(compare);
+    return sortedList;
   };
 
   return (
@@ -114,7 +113,7 @@ const DiaryList = ({ diaryList }) => {
       </div>
 
       {getProcessedDiaryList().map((it) => (
-        <DiaryItem key={it.id} {...it}/>
+        <DiaryItem key={it.id} {...it} />
       ))}
     </div>
   );
