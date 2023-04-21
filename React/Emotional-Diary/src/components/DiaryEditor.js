@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { DiaryDispatchContext } from "../App";
 
@@ -49,11 +49,11 @@ const getStringDate = (date) => {
   return `${year}-${month}-${day}`;
 };
 
-const DiaryEditor = () => {
+const DiaryEditor = ({isEdit, originData}) => {
   //  감정저장 상태 : 왜 필요하냐면 일기 작성할때 감정이 저장되어야 하고 누른 상태에 따라 css도 바뀌기 때문에
   const [emotion, setEmotion] = useState(3);
   const [date, setDate] = useState(getStringDate(new Date()));
-  const [content, setContet] = useState(" ");
+  const [content, setContent] = useState(" ");
   const contentRef = useRef();
   const navigate = useNavigate();
   const { onCreate } = useContext(DiaryDispatchContext);
@@ -70,6 +70,15 @@ const DiaryEditor = () => {
     onCreate(date, content, emotion);
     navigate("/", { replace: true });
   };
+
+  useEffect(() => {
+    if (isEdit) {
+      setDate(getStringDate(new Date(parseInt(originData.date))));
+      setEmotion(originData.emotion);
+      setContent(originData.content);
+    }
+    console.log(originData);
+  }, [isEdit, originData]);
 
   return (
     <div className="DiaryEditor">
@@ -115,7 +124,7 @@ const DiaryEditor = () => {
             <textarea
               ref={contentRef}
               value={content}
-              onChange={(e) => setContet(e.target.value)}
+              onChange={(e) => setContent(e.target.value)}
             />
           </div>
         </section>
