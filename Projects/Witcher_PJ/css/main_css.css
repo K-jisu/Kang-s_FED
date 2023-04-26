@@ -1,0 +1,340 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+/* 
+    font-family: 'Nanum Gothic', sans-serif;
+*/
+
+.scbar::-webkit-scrollbar {
+    /* 전체 스크롤바 크기 */
+    width: 7px;
+}
+
+.scbar::-webkit-scrollbar-thumb {
+    /* 스크롤바 */
+    background-color: #666;
+    border-radius: 5px;
+}
+
+.scbar::-webkit-scrollbar-track {
+    /* 스크롤바 트렉 */
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+html {
+    overflow-x: hidden;
+    color: #fff;
+    background-color: #000;
+}
+
+body,
+div {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+div {
+    font-size: 20px;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+}
+/* ------------------------------------------------------------ */
+/* netflix 로고 */
+.logo {
+    background-color: #000;
+    padding-left: 30px;
+    padding-top: 10px;
+}
+/* ------------------------------------------------------------ */
+/* 메인 */
+/* 뱃지 */
+.badge {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 1;
+}
+
+.badge:hover {
+    transform: rotate(360deg);
+    transition: 5s ;
+
+}
+
+/* ------------------------------------------------------------ */
+/* 네비게이션 */
+#navi {
+    position: fixed;
+    top: 200px;
+    z-index: 1;
+}
+
+#navi ul li {
+    list-style-type: none;
+    font-size: 32px;
+    line-height: 70px;
+}
+
+#navi>ul>li a {
+    color: #fff;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.menu {
+    position: fixed;
+    top: 400px;
+    left: -300px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .8s ease-out 2s;
+}
+
+#navi>ul>li:hover .menu {
+    left: 0px;
+    transition: .8s;
+}
+
+#navi:valid .menu {
+    height: 800px;
+    position: fixed;
+
+}
+
+/* ------------------------------------------------------------ */
+
+/* 섹션1 */
+#sec1 {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    background: url(../imgs/bg1.jpg) black no-repeat top/cover;
+    overflow: hidden;
+}
+
+/* 윗쳐 로고 */
+#sec1 .wlogo {
+    position: absolute;
+    top: 15px;
+    left: 0px;
+}
+
+/* 요약 내용 */
+#sec1 .title-info {
+    position: absolute;
+    bottom: 420px;
+    left: 300px;
+    width: 500px;
+    color: #fff;
+    opacity: 0;
+
+    transition: .5s ease-in 2s;
+}
+
+#sec1 .title-info h3 {
+    font-size: 35px;
+}
+
+#sec1 .title-info div:nth-of-type(1),
+#sec1 .title-info span {
+    color: rgb(202, 202, 202);
+}
+
+/* 상세정보 */
+#details {
+    position: absolute;
+    margin: 0 100px;
+    bottom: 100px;
+    width: 100%;
+}
+
+#details ul {
+    list-style-type: none;
+    width: 80%;
+    line-height: 25px;
+}
+
+#details h4 {
+    color: rgb(202, 202, 202);
+    margin-bottom: 10px;
+}
+
+#sec1 .details {
+    color: #fff;
+    float: left;
+    width: 33.3%;
+}
+
+.details td {
+    padding-right: 10px;
+    line-height: 25px;
+}
+
+/* 요약내용 오버시 */
+#sec1 .title-info:hover {
+    opacity: 100;
+    transform: scale(1.2);
+    transition: .5s ease-out;
+}
+
+/* ------------------------------------------------------------ */
+/* 섹션2 */
+#sec2 {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    background: url(../imgs/bg2.jpg) black no-repeat top/cover;
+}
+
+/* 위쳐 로고 */
+#sec2 .wlogo2{
+    position: absolute;
+    width: 60%;
+    left: 10px;
+    top: 10px;
+}
+
+/* 비디오 플레이어 조절 */
+#sec2 .vp {
+    position: relative;
+    text-align: center;
+    top: calc(50% - 300px);
+}
+
+/* iframe 조절 */
+#sec2 iframe{
+    width: 800px;
+    height: 555px;
+    border: none;
+}
+
+/* ------------------------------------------------------------ */
+/* 섹션3 */
+#sec3 {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    background: url(../imgs/bg3.jpg) black no-repeat top/cover;
+    overflow: hidden;
+}
+
+/* 전체 캐릭터박스 */
+#sec3 .char-content {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 150px;
+    /* left: 115px;
+    top: 300px; */
+}
+
+#sec3 .char-content::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* 개별 캐릭터박스 */
+#sec3 .char-content .char-box {
+    /* border: 1px dotted lime; */
+    width: 29.33%;
+    float: left;
+    box-sizing: border-box;
+    margin: 0px 2%;
+    
+    
+    
+}
+
+/* 개별 캐릭터박스 오버시 */
+#sec3 .char-box:hover img{
+    opacity: 0;
+    transform: scale(1.2);
+    transition: .6s ;
+}
+
+/* 이미지 조절 */
+.char-img>img {
+    border-radius: 7%;
+    opacity: 1;
+    width: 100%;
+    transition: .6s .5s ;
+    box-shadow: 3px 3px 10px #000;
+}
+
+/* 캐릭터 설명 박스 */
+.char-content .char-info{
+    background: rgba(59, 59, 59, 0.747);
+    /* border: 1px dotted rgb(121, 33, 223); */
+    position: absolute;
+    top: 0;
+    width: 28.8%;
+    height: 99%;
+    overflow: auto;
+    opacity: 0;
+    transition: .6s .5s;
+    padding-left: 5px;
+    border-radius: 7%;
+}
+
+/* 캐릭터 설명박스 오버시 */
+#sec3 .char-box:hover .char-info{
+    opacity: 1;
+    transition: .8s ;
+}
+
+#sec3 .char-info h3{
+    text-align: center;
+}
+
+
+/* ------------------------------------------------------------ */
+/* 하단부분 */
+#footer {
+    position: relative;
+    width: 100%;
+    background-color: #000;
+}
+
+/* 주소 및 정보 */
+#footer .addr{
+    margin: 20px;
+    line-height: 20px;
+    font-size: 16px;
+}
+
+/* 어사이드 바 */
+#floating {
+    position: fixed;
+    width: 169px;
+    bottom: 180px;
+    right: 0px;
+}
+
+#floating img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+#floating .aside {
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0);
+    width: 70px;
+    height: 70px;
+    
+}
+
+#floating .aside:hover img{
+    transform: scale(1.4);
+    transition: .4s;
+}

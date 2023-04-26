@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conqueror's Blade _ index</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script>
+        function gogo(yo){
+            document.querySelector("#ifm2").src="https://www.youtube.com/embed/"+yo+"?autoplay=1&loop=1&playlist="+yo;
+
+        }
+        
+        function yoyo(go){
+            document.querySelector("#ifm1").src="https://www.youtube.com/embed/"+go+"?autoplay=1&loop=1&playlist="+go;
+
+        }
+    </script>
+</head>
+<body>
+    <!-- 상단 -->
+    <header id="top" class="ibx">
+        <!-- 로고 -->
+        <div>
+            <a href="#"><h1 class="logo"></h1></a>
+        </div>
+        <!-- 메뉴 -->
+        <nav id="gnb">
+            <ul>
+                <li><a href="#" title="season">Season</a></li>
+                <li><a href="#sec2" title="weapon">Weapon</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- 메인 -->
+    <main id="main_cont" class="ibx">
+    <!------------------------- 섹션1 ------------------------->
+    <section id="sec1" class="comsec">
+        <div class="sstitle">
+            <p>SEASON</p>
+        </div>
+
+        <div class="ssnav">
+            <div class="ssnav_box">
+                <ul>
+                    <li onclick="yoyo('9igGhwObnOs')">
+                        <span onclick="yoyo()">SEASON5</span>
+                    </li>
+                    <li onclick="yoyo('7IZUd3I_LVI')">
+                        <span onclick="yoyo()">SEASON6</span>
+                    </li>
+                    <li onclick="yoyo('7fphPbV9zDM')">
+                        <span>SEASON7</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="screen1">
+            <iframe id="ifm1" class="ifm" src="https://www.youtube.com/embed/7fphPbV9zDM?autoplay=1&loop=1&playlist=7fphPbV9zDM" title="YouTube video player" allow="autoplay"></iframe>
+        </div>
+        
+
+    </section>
+    <!--------------------------- 섹션2 --------------------------->
+    <section id="sec2" class="comsec bgi">
+        <div class="wptitle">
+            <p>WEAPON</p>
+        </div>
+
+        <div class="wpnav">
+            <ul>
+                <li id="Musket">
+                    <img src="./img/musket.png" alt="화승총 기본">
+                    <img src="./img/musket-active.png" onclick="gogo('d5A_VEEpKLw'); return false;" alt="화승총 액티브">
+                    <div class="wpinfo">
+                        Musket
+                    </div>
+                </li>
+                <li>
+                    <img src="./img/arco.png" alt="활 기본">
+                    <img src="./img/arco-active.png" onclick="gogo('k6T9Gzg94MQ'); return false;" alt="활 액티브">
+                    <div class="wpinfo">
+                        LongBow
+                    </div>
+                </li>
+                <li>
+                    <img src="./img/longSwordShield.png" alt="롱소드 기본">
+                    <img src="./img/longSwordShield-active.png" onclick="gogo('ryTepcjVafk'); return false;" alt="롱소드 액티브">
+                    <div class="wpinfo">
+                        LongSword
+                    </div>
+                </li>
+                <li>
+                    <img src="./img/poleaxe.png" alt="긴도끼 기본">
+                    <img src="./img/poleaxe-active.png" onclick="gogo('OM03dgwh90Q'); return false;" alt="긴도끼 액티브">
+                    <div class="wpinfo">
+                        Poleaxe
+                    </div>
+                </li>
+                <li>
+                    <img src="./img/spear.png" alt="창 기본">
+                    <img src="./img/spear-active.png" onclick="gogo('fOU1WU9NCHc'); return false;" alt="창 액티브">
+                    <div class="wpinfo">
+                        Spear
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div id="screen2">
+            <iframe id="ifm2" class="ifm" src="https://www.youtube.com/embed/rStuRYaKgWY?loop=1&playlist=rStuRYaKgWY" title="YouTube video player"></iframe>
+        </div>
+
+        
+
+    </section>
+    
+    </main>
+    <!--------------------------- 하단 --------------------------->
+    
+    <footer id="info" class="ibx">
+        <div class="info_box">
+            <div class="fbx fb1"></div>
+            <div class="fbx fb2"></div>
+            <div class="fbx fb3">
+                <ul>
+                    <li>Booming Tech | User Agreement | Privacy Policy</li>
+                    <li>Customer Service: cb_support@boomingtech.com</li>
+                    <li>Business: bd@boomingtech.com</li>
+                    <li>©2021 Booming Tech. All Rights Reserved.</li>
+                </ul>
+            </div>
+        </div>
+        
+
+    </footer>
+    
+</body>
+</html>

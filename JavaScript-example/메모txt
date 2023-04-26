@@ -1,0 +1,6 @@
+arguments
+ - 함수로 넘어 온 모든 인수에 접근
+ - 함수내에서 이용 가능한 지역 변수
+ - length / index
+ - Array 형태의 객체
+ - 배열의 내장 메서드 없음(forEach, map)
