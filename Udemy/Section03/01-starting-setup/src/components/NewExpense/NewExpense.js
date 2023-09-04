@@ -1,22 +1,22 @@
-import React from 'react';
+import React from "react";
 
-import './NewExpense.css'
-import ExpenseForm from './ExpenseForm';
+import "./NewExpense.css";
+import ExpenseForm from "./ExpenseForm";
 
-const NewExpense = () => {
-  const saveExpenesDataHandler = (enteredExpenseData) =>{
+const NewExpense = (props) => {
+  const saveExpenesDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
-      id : Math.random().toString()
+      id: Math.random().toString(),
     };
-    console.log(expenseData)
+    props.onAddExpense(expenseData);
   };
   return (
-    <div className='new-expense'>
-      <ExpenseForm onSaveExpenseData = {saveExpenesDataHandler}/>
+    <div className="new-expense">
+      <ExpenseForm onSaveExpenseData={saveExpenesDataHandler} />
     </div>
   );
 };
 
-export default NewExpense;<form>
-</form>
+export default NewExpense;
+<form></form>;
