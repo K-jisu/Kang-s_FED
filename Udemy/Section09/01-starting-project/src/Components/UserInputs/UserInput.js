@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 
 const initialUserInput = {
-  "current-savings": 10000,
+  "current-savings": 10000, //특수문자 - 를 사용하기 위해 ""를 사용 ""를 사용 안하고 싶다면 currentSavings 라고 하면 됨
   "yearly-contribution": 1200,
   "expected-return": 7,
   duration: 10,
 };
-const UserInput = () => {
+const UserInput = (props) => {
   const [userInput, setUerInput] = useState(initialUserInput);
+
 
   const submitHandler = (e) => {
     e.preventDefault();
+
+    props.onCalculate(userInput);
   };
 
   const resetHandler = () => {
@@ -20,8 +23,8 @@ const UserInput = () => {
   const inputChangeHandler = (input, value) => {
     setUerInput((prev) => {
       return {
-        ...prev,
-        [input]: value,
+        ...prev, // 기존 값
+        [input]: value, // 새로운 값 덮어쓰기 , [] 는 initialUerInput 에서 "" 를 사용했기 때문
       };
     });
   };
