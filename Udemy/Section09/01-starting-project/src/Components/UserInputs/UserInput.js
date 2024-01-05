@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import classes from "./UserInput.module.css";
 
 const initialUserInput = {
   "current-savings": 10000, //특수문자 - 를 사용하기 위해 ""를 사용 ""를 사용 안하고 싶다면 currentSavings 라고 하면 됨
@@ -8,7 +9,6 @@ const initialUserInput = {
 };
 const UserInput = (props) => {
   const [userInput, setUerInput] = useState(initialUserInput);
-
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -24,15 +24,15 @@ const UserInput = (props) => {
     setUerInput((prev) => {
       return {
         ...prev, // 기존 값
-        [input]: value, // 새로운 값 덮어쓰기 , [] 는 initialUerInput 에서 "" 를 사용했기 때문
+        [input]: +value, // 새로운 값 덮어쓰기 , [] 는 initialUerInput 에서 "" 를 사용했기 때문, "+" 는 문자열을 숫자로 변환한다.
       };
     });
   };
 
   return (
     <div>
-      <form onSubmit={submitHandler} className="form">
-        <div className="input-group">
+      <form onSubmit={submitHandler} className={classes.form}>
+        <div className={classes["input-group"]}>
           <p>
             <label htmlFor="current-savings">Current Savings ($)</label>
             <input
@@ -56,7 +56,7 @@ const UserInput = (props) => {
             />
           </p>
         </div>
-        <div className="input-group">
+        <div className={classes["input-group"]}>
           <p>
             <label htmlFor="expected-return">
               Expected Interest (%, per year)
@@ -82,11 +82,15 @@ const UserInput = (props) => {
             />
           </p>
         </div>
-        <p className="actions">
-          <button onClick={resetHandler} type="reset" className="buttonAlt">
+        <p className={classes.actions}>
+          <button
+            onClick={resetHandler}
+            type="reset"
+            className={classes.buttonAlt}
+          >
             Reset
           </button>
-          <button type="submit" className="button">
+          <button type="submit" className={classes.button}>
             Calculate
           </button>
         </p>
