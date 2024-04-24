@@ -18,10 +18,10 @@ function App() {
     setTodo("");
   };
   console.log(todos);
-  
+
   return (
     <>
-    <h1>My To do ({todos.length}개)</h1>
+      <h1>My To do ({todos.length}개)</h1>
       <form onSubmit={onSubmit}>
         <input
           value={todo}
@@ -31,6 +31,12 @@ function App() {
         />
         <button>Submit</button>
       </form>
+      <hr />
+      <ul>
+        {todos.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
     </>
   );
 }
