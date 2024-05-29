@@ -11,7 +11,6 @@ const Union = (input1: NumStr, input2: NumStr, resultConversion: NumTxt) => {
   } else {
     result = input1.toString() + " " + input2.toString();
   }
-
   return result;
 };
 const combinedAges = Union(30, 29, "as-number");
@@ -22,5 +21,9 @@ console.log(combinedStringAges);
 
 const combinedName = Union("David", "Anna", "as-text");
 console.log(combinedName);
+
+//Function Type
+
+
 
 export default Union;
