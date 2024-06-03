@@ -47,12 +47,30 @@ const Class = () => {
 
   // 회계부서 선언
   class AccountingDepartment extends Department {
+    private lastReports: string;
+
+    get mostRecentReports() {
+      if (this.lastReports) {
+        return this.lastReports;
+      }
+      throw new Error("No report found");
+    }
+
+    set mostRecentReports(value) {
+      if (!value) {
+        throw new Error("Please input value");
+      }
+      this.addReports(value);
+    }
+
     constructor(id: string, private reports: string[]) {
       super(id, "Accounting");
+      this.lastReports = reports[0];
     }
 
     addReports(text: string) {
       this.reports.push(text);
+      this.lastReports = text;
     }
     printReports() {
       console.log(this.reports);
@@ -76,7 +94,9 @@ const Class = () => {
   // AccountingDepartment 호출
   const accounting = new AccountingDepartment("d2", []);
   accounting.describe();
+  accounting.mostRecentReports = "Year End Reports";
   accounting.addReports("Somethig went Wrong ...");
+  console.log(accounting.mostRecentReports);
   accounting.printReports();
   accounting.addEmployee("Manu");
   console.log(accounting);
