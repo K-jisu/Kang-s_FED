@@ -7,10 +7,13 @@
 // readonly : 직접수정 말고는 읽기만 가능
 // extends
 //  super
+// static 정적매서드, 정적프로퍼티
 
 const Class = () => {
   // Department 라는 함수에 constrictor로 props를 받아와서 methods(함수)로 기능구현
   class Department {
+    static fiscalYear = 2024; //정적 프로퍼티
+
     // private readonly id : string;
     // public name: string;
     protected employees: string[] = [];
@@ -22,6 +25,10 @@ const Class = () => {
 
     constructor(private readonly id: string, public name: string) {}
 
+    static createEmployee(name: string) {
+      // 정적매서드
+      return { name: name };
+    }
     describe(this: Department) {
       console.log(`Departmanet (${this.id}) : ${this.name}`);
     }
@@ -80,6 +87,8 @@ const Class = () => {
       this.employees.push(name);
     }
   }
+  const employee1 = Department.createEmployee("Min");
+  console.log(employee1);
 
   // ITDepartment 호출
   const it = new ITDepartment("IT", ["MAX"]);
