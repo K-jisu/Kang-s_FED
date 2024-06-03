@@ -8,10 +8,11 @@
 // extends
 //  super
 // static 정적매서드, 정적프로퍼티
+// abstract 추상키워드
 
 const Class = () => {
   // Department 라는 함수에 constrictor로 props를 받아와서 methods(함수)로 기능구현
-  class Department {
+  abstract class Department {
     static fiscalYear = 2024; //정적 프로퍼티
 
     // private readonly id : string;
@@ -23,15 +24,13 @@ const Class = () => {
     // }
     //// 위의 식 보다는 아래 식으로 많이 씀
 
-    constructor(private readonly id: string, public name: string) {}
+    constructor(protected readonly id: string, public name: string) {}
 
     static createEmployee(name: string) {
       // 정적매서드
       return { name: name };
     }
-    describe(this: Department) {
-      console.log(`Departmanet (${this.id}) : ${this.name}`);
-    }
+    abstract describe(this: Department): void;
 
     addEmployee(employee: string) {
       this.employees.push(employee);
@@ -50,11 +49,18 @@ const Class = () => {
       super(id, "IT"); // 항상 super를 먼저 사용한 수 그 밑에 추가 해줘야 함
       this.admins = admins;
     }
+    describe() {
+      console.log("IT Department id : " + this.id);
+    }
   }
 
   // 회계부서 선언
   class AccountingDepartment extends Department {
     private lastReports: string;
+
+    describe() {
+      console.log("Accountinf Department id : " + this.id);
+    }
 
     get mostRecentReports() {
       if (this.lastReports) {
