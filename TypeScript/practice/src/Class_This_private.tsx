@@ -8,7 +8,7 @@
 // extends
 //  super
 // static 정적매서드, 정적프로퍼티
-// abstract 추상키워드
+// abstract 추상키워드 (상속받은 머서드에서 무조건 사용하도록 강요)
 
 const Class = () => {
   // Department 라는 함수에 constrictor로 props를 받아와서 methods(함수)로 기능구현
@@ -30,7 +30,7 @@ const Class = () => {
       // 정적매서드
       return { name: name };
     }
-    abstract describe(this: Department): void;
+    abstract describe(this: Department): void; // 추상매서드 Department를 상속받은 매서드들은 describe를 무조건 사용해야함
 
     addEmployee(employee: string) {
       this.employees.push(employee);
@@ -57,6 +57,7 @@ const Class = () => {
   // 회계부서 선언
   class AccountingDepartment extends Department {
     private lastReports: string;
+    private static instance: AccountingDepartment;
 
     describe() {
       console.log("Accountinf Department id : " + this.id);
@@ -76,9 +77,17 @@ const Class = () => {
       this.addReports(value);
     }
 
-    constructor(id: string, private reports: string[]) {
+    private constructor(id: string, private reports: string[]) {
       super(id, "Accounting");
       this.lastReports = reports[0];
+    } // 싱글톤 패턴
+
+    static getInstance() {
+      if (AccountingDepartment.instance) {
+        return this.instance;
+      } // 인스턴스가 있으면 그걸 반환하고
+      this.instance = new AccountingDepartment("d2", []);
+      return this.instance; // 없으면 새로운 인스턴스를 반환한다.
     }
 
     addReports(text: string) {
@@ -107,7 +116,9 @@ const Class = () => {
   console.log(it);
 
   // AccountingDepartment 호출
-  const accounting = new AccountingDepartment("d2", []);
+  // const accounting = new AccountingDepartment("d2", []);
+  const accounting = AccountingDepartment.getInstance();
+
   accounting.describe();
   accounting.mostRecentReports = "Year End Reports";
   accounting.addReports("Somethig went Wrong ...");
