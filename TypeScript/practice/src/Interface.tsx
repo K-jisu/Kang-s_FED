@@ -5,15 +5,17 @@
 const Interface = () => {
   // type AddFn = (a: number, b: number) => number;
   interface AddFn {
-    (a:number, b:number) : number
+    (a: number, b: number): number;
   }
 
   const add: AddFn = (n1: number, n2: number) => {
     return n1 + n2;
   };
 
+  // ---------------------------
+
   interface Named {
-    readonly name: string;
+    readonly name?: string; // 선택적 매개변수
   }
 
   interface Greetable extends Named {
@@ -21,19 +23,25 @@ const Interface = () => {
   }
 
   class Person implements Greetable {
-    name: string;
+    name?: string;
     age = 30;
 
-    constructor(n: string) {
-      this.name = n;
+    constructor(n?: string) {
+      if (n) {
+        this.name = n;
+      }
     }
 
     greet(phrase: string): void {
-      console.log(phrase + " " + user1.name);
+      if (this.name) {
+        console.log(phrase + " " + user1.name);
+      } else {
+        console.log("Hi");
+      }
     }
   }
 
-  const user1: Greetable = new Person("Max");
+  const user1: Greetable = new Person();
   user1.greet("Hi iam");
   console.log(user1);
 
