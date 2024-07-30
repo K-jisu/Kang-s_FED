@@ -66,12 +66,41 @@ type Vehicle = Car | Truck;
 const v1 = new Car();
 const v2 = new Truck();
 
-const useVehicle = (vehicle: Vehicle) => {
+const usedVehicle = (vehicle: Vehicle) => {
   vehicle.drive();
   if (vehicle instanceof Truck) vehicle.loadCargo(1000);
 };
 
-)
+usedVehicle(v1);
+usedVehicle(v2);
+
+/// 구별된 유니언 switch case 문법을 사용. type이라는 공통 속성을 사용했기 때문
+
+interface Bird {
+  type: "bird";
+  flyingspeed: number;
+}
+interface Horse {
+  type: "horse";
+  runningspeed: number;
+}
+
+type Animal = Bird | Horse;
+
+const moveAnimal = (animal: Animal) => {
+  let speed;
+  switch (animal.type) {
+    case "bird":
+      speed = animal.flyingspeed;
+      break;
+    case "horse":
+      speed = animal.runningspeed;
+      break;
+  }
+  console.log("Moving animal speed: " + speed);
+};
+
+moveAnimal({ type: "bird", flyingspeed: 1000 });
 
 function App() {
   return <></>;
