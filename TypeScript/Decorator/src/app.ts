@@ -24,5 +24,31 @@ class Person {
     console.log("Creating person object...");
   }
 }
-
 const pers = new Person();
+
+function Log(target: any, propertyName: string | symbol) {
+  console.log("Property Decorated");
+  console.log(target, propertyName);
+}
+
+class Product {
+  @Log
+  title: string;
+  private _price: number;
+
+  set Price(val: number) {
+    if (val > 0) {
+      this._price = val;
+    } else {
+      throw console.error("Invalid Price - should be positive!");
+    }
+  }
+  constructor(t: string, p: number) {
+    this.title = t;
+    this._price = p;
+  }
+
+  getPriceWithTax(tax: number) {
+    return this._price * (1 + tax);
+  }
+}
